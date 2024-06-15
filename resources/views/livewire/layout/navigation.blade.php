@@ -23,8 +23,8 @@ new class extends Component {
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}" wire:navigate
-                        class="flex items-center">
-                        <h1 class="text-2xl font-semibold text-gray-800 leading-tight mb-5">
+                        class="flex items-center justify-center">
+                        <h1 class="text-2xl font-semibold text-gray-800 leading-tight">
 
                             <span class="text-blue-500">
                                 Grid
@@ -44,6 +44,9 @@ new class extends Component {
                     </x-nav-link>
                     <x-nav-link :href="route('sensors')" :active="request()->routeIs('sensors')" wire:navigate>
                         {{ __('Sensors') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users')" wire:navigate>
+                        {{ __('Users') }}
                     </x-nav-link>
                 </div>
             </div>

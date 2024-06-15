@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,5 +32,8 @@ Route::get('sensors', [DashboardController::class, 'sensors'])
 Route::get('sensors/{nodeId}', [DashboardController::class, 'viewSensor'])
     ->middleware(['auth'])
     ->name('sensor.view');
+
+Route::resource('users', UserController::class)
+    ->middleware(['auth']);
 
 require __DIR__.'/auth.php';
